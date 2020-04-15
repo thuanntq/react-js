@@ -1,0 +1,59 @@
+/* variables */
+@text-color: #000000;
+@text-hover-color: #999;
+@background-color: #4CAF50;
+@max-width: 250px;
+@assets-img: '/assets/img';
+
+@my-selection: banner;
+
+/* mixins */
+#circle(@size: 25px){
+  background-color: @background-color;
+  border-radius: 50%;
+  width: @size;
+  height: @size;
+}
+
+#small-circle{  
+  #circle
+}
+
+#big-circle{  
+  #circle(23px)
+}
+
+.@{my-selection} {
+  background-image: url('@{assets-img}/avatar.png');
+  width: @max-width;
+}
+
+/* nesting and scope */
+ul{
+  @text-color: #c5c5c5;
+  background-color: @background-color;
+  padding: 10px;
+  list-style: none;
+  
+  :global {
+    a {
+    	text-decoration: none;
+    }
+  }
+
+  li{
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 10px 0;
+    color: @text-color;
+    
+    /* operations */
+    width: @max-width / 2;
+    
+    /* functions */
+    &:hover{
+    	color: @text-hover-color;
+      	background-color: fadeout(@background-color, 50%)
+    }
+  }
+}

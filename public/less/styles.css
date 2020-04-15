@@ -1,0 +1,41 @@
+/* variables */
+/* mixins */
+#small-circle {
+    background-color: #4CAF50;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+  }
+  #big-circle {
+    background-color: #4CAF50;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+  }
+  .banner {
+    background-image: url('/assets/img/avatar.png');
+    width: 250px;
+  }
+  /* nesting and scope */
+  ul {
+    background-color: #4CAF50;
+    padding: 10px;
+    list-style: none;
+  }
+  ul :global a {
+    text-decoration: none;
+  }
+  ul li {
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 10px 0;
+    color: #c5c5c5;
+    /* operations */
+    width: 125px;
+    /* functions */
+  }
+  ul li:hover {
+    color: #999;
+    background-color: rgba(76, 175, 80, 0.5);
+  }
+  
